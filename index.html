@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Chúc Mừng Ngày 20/10 Gửi Bé Cưng 🌸</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Dancing+Script:wght@600;700&family=Pacifico&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --c-pink-light: #FFD6E5;
+      --c-pink-deep: #F06292;
+      --c-pink-peach: #FFB3C6;
+      --c-cream-white: #FFF9FB;
+      --c-parchment: #FFFDF8;
+      --c-rose-dark: #880e4f;
+      --c-text-brown: #4A2E35;
+      --c-gold: #D4AF37;
+      --shadow-soft: 0 10px 30px rgba(240, 98, 146, 0.2);
+      --shadow-card: 0 20px 45px rgba(216, 27, 96, 0.22);
+      --font-title: 'Dancing Script', 'Pacifico', cursive;
+      --font-header: 'Pacifico', cursive;
+      --font-letter: 'Playfair Display', Georgia, serif;
+      --font-ui: 'Be Vietnam Pro', -apple-system, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      width: 100%;
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: var(--font-ui);
+      background: linear-gradient(135deg, #FFF0F5 0%, #FFDEE9 50%, #FFE6EE 100%);
+      color: var(--c-text-brown);
+      position: relative;
+    }
+
+    #flower-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 50;
+      transition: opacity 1.2s ease;
+    }
+
+    .music-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.88);
+      border: 2px solid var(--c-pink-peach);
+      box-shadow: 0 4px 15px rgba(240, 98, 146, 0.3);
+      cursor: pointer;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.25s ease, background 0.25s ease;
+      backdrop-filter: blur(6px);
+      outline: none;
+    }
+
+    .music-btn:hover {
+      transform: scale(1.1);
+      background: #ffffff;
+    }
+
+    .music-btn svg {
+      width: 24px;
+      height: 24px;
+      fill: var(--c-pink-deep);
+      transition: transform 0.4s ease;
+    }
+
+    .music-btn.playing svg {
+      animation: spinMusic 3.5s linear infinite;
+    }
+
+    @keyframes spinMusic {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .spotify-embed-container {
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      z-index: 90;
+      width: clamp(260px, 80vw, 320px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      border-radius: 12px;
+      overflow: hidden;
+      display: none;
+      background: #fff;
+    }
+
+    .stage-intro {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 60;
+      pointer-events: none;
+      transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .intro-title-wrapper {
+      text-align: center;
+      padding: 24px 32px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(255, 245, 248, 0.8) 70%, transparent 100%);
+      border-radius: 30px;
+      animation: introPulse 3.5s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    .intro-title {
+      font-family: var(--font-header);
+      font-size: clamp(2.4rem, 8vw, 4.6rem);
+      background: linear-gradient(45deg, #E91E63, #F06292, #BA68C8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 4px 20px rgba(233, 30, 99, 0.25);
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .intro-subtitle {
+      font-family: var(--font-title);
+      font-size: clamp(1.3rem, 4vw, 2.2rem);
+      color: #9C27B0;
+      opacity: 0.95;
+      letter-spacing: 0.5px;
+    }
+
+    @keyframes introPulse {
+      0%, 100% { transform: scale(0.97); opacity: 0.95; }
+      50% { transform: scale(1.03); opacity: 1; }
+    }
+
+    .main-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 16px 80px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .card-scene {
+      perspective: 1400px;
+      width: 100%;
+      max-width: 440px;
+      margin: 0 auto;
+      transition: opacity 1s ease, transform 1s ease;
+      opacity: 0;
+      transform: translateY(40px) scale(0.92);
+      pointer-events: none;
+    }
+
+    .card-scene.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+
+    .card-envelope {
+      position: relative;
+      width: 100%;
+      background: #FFFDFC;
+      border-radius: 20px;
+      padding: 24px 20px 20px;
+      box-shadow: var(--shadow-card), 0 0 0 1px rgba(255, 179, 198, 0.4);
+      cursor: pointer;
+      text-align: center;
+      animation: cardBreathe 4s ease-in-out infinite;
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+      border: 3px solid #FFF0F5;
+      overflow: hidden;
+    }
+
+    .card-envelope::before {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      border: 1.5px dashed #FFB3C6;
+      border-radius: 14px;
+      pointer-events: none;
+    }
+
+    .card-envelope:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 25px 50px rgba(233, 30, 99, 0.28);
+    }
+
+    @keyframes cardBreathe {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-7px) scale(1.015); }
+    }
+
+    .card-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, #FFE4EC, #FFD1DF);
+      color: #C2185B;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(233, 30, 99, 0.12);
+    }
+
+    .card-photo-frame {
+      width: 100%;
+      height: 240px;
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      background: #FFF5F8;
+      border: 4px solid #fff;
+    }
+
+    .card-photo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .card-envelope:hover .card-photo-img {
+      transform: scale(1.05);
+    }
+
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #FFE4EC 0%, #FFCCD9 100%);
+      color: #D81B60;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .photo-placeholder svg {
+      width: 54px;
+      height: 54px;
+      fill: #F06292;
+      margin-bottom: 8px;
+      animation: heartbeat 2s infinite ease-in-out;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      14% { transform: scale(1.15); }
+      28% { transform: scale(1); }
+      42% { transform: scale(1.15); }
+      70% { transform: scale(1); }
+    }
+
+    .card-title {
+      font-family: var(--font-title);
+      font-size: clamp(1.8rem, 5vw, 2.3rem);
+      color: #C2185B;
+      margin-top: 18px;
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .card-stamp {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 44px;
+      height: 44px;
+      border: 2px dashed #F06292;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #E91E63;
+      font-size: 1.3rem;
+      transform: rotate(12deg);
+      background: rgba(255, 240, 245, 0.8);
+      pointer-events: none;
+    }
+
+    .tap-hint {
+      margin-top: 22px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #D81B60;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 10px 22px;
+      border-radius: 30px;
+      box-shadow: 0 4px 15px rgba(240, 98, 146, 0.25);
+      animation: hintPulsing 1.8s infinite ease-in-out;
+      cursor: pointer;
+    }
+
+    @keyframes hintPulsing {
+      0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(240, 98, 146, 0.25); }
+      50% { transform: scale(1.06); box-shadow: 0 8px 25px rgba(240, 98, 146, 0.45); }
+    }
+
+    .letter-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(45, 15, 25, 0.55);
+      backdrop-filter: blur(6px);
+      z-index: 70;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 14px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+
+    .letter-modal.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .letter-paper {
+      width: 100%;
+      max-width: 580px;
+      max-height: 88vh;
+      background: var(--c-parchment);
+      border-radius: 18px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(212, 175, 55, 0.3);
+      padding: clamp(24px, 5vw, 40px) clamp(20px, 4.5vw, 36px);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transform: scale(0.85) translateY(40px);
+      transition: transform 0.55s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+      border: 8px solid #FFF8FA;
+    }
+
+    .letter-modal.open .letter-paper {
+      transform: scale(1) translateY(0);
+    }
+
+    .letter-paper::before,
+    .letter-paper::after {
+      content: '🌸';
+      position: absolute;
+      font-size: 1.5rem;
+      opacity: 0.7;
+    }
+    .letter-paper::before { top: 10px; left: 12px; }
+    .letter-paper::after { bottom: 10px; right: 12px; }
+
+    .letter-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px dashed #FFD6E5;
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+    }
+
+    .letter-salutation {
+      font-family: var(--font-title);
+      font-size: clamp(1.8rem, 4.5vw, 2.4rem);
+      color: #C2185B;
+      font-weight: 700;
+    }
+
+    .btn-skip {
+      background: #FFE8F0;
+      border: 1px solid #FFCCD9;
+      color: #C2185B;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .btn-skip:hover {
+      background: #F06292;
+      color: #fff;
+    }
+
+    .letter-content-scroll {
+      overflow-y: auto;
+      padding-right: 6px;
+      font-family: var(--font-letter);
+      font-size: clamp(1rem, 2.5vw, 1.15rem);
+      line-height: 1.85;
+      color: var(--c-text-brown);
+      white-space: pre-wrap;
+      word-break: break-word;
+      scroll-behavior: smooth;
+      flex-grow: 1;
+    }
+
+    .letter-content-scroll::-webkit-scrollbar {
+      width: 5px;
+    }
+    .letter-content-scroll::-webkit-scrollbar-thumb {
+      background: #FFB3C6;
+      border-radius: 10px;
+    }
+
+    .typing-cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.1em;
+      background-color: #E91E63;
+      vertical-align: -2px;
+      margin-left: 2px;
+      animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .letter-footer {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 2px dashed #FFD6E5;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .letter-signature {
+      font-family: var(--font-title);
+      font-size: clamp(1.5rem, 3.8vw, 2rem);
+      color: #C2185B;
+      font-weight: 700;
+    }
+
+    .btn-view-photos {
+      align-self: center;
+      margin-top: 16px;
+      background: linear-gradient(135deg, #F06292 0%, #E91E63 100%);
+      color: #ffffff;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(233, 30, 99, 0.35);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      animation: bounceBtn 2s infinite ease-in-out;
+    }
+
+    .btn-view-photos:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 28px rgba(233, 30, 99, 0.5);
+    }
+
+    @keyframes bounceBtn {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .memories-section {
+      width: 100%;
+      max-width: 1080px;
+      margin: 40px auto 0;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease, transform 1s ease;
+      display: none;
+    }
+
+    .memories-section.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .memories-title {
+      text-align: center;
+      font-family: var(--font-header);
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: #C2185B;
+      margin-bottom: 10px;
+    }
+
+    .memories-subtitle {
+      text-align: center;
+      font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+      color: #880e4f;
+      margin-bottom: 34px;
+      opacity: 0.85;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px 24px;
+      padding: 10px 14px;
+    }
+
+    .polaroid-card {
+      background: #ffffff;
+      padding: 12px 12px 18px;
+      border-radius: 4px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      position: relative;
+      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.3, 1), box-shadow 0.35s ease, z-index 0s;
+      cursor: pointer;
+      animation: floatPolaroid 5s ease-in-out infinite;
+    }
+
+    .polaroid-card::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 20px;
+      background: rgba(255, 179, 198, 0.7);
+      backdrop-filter: blur(2px);
+      border-radius: 2px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+      z-index: 2;
+    }
+
+    .polaroid-card:hover, .polaroid-card:active {
+      transform: scale(1.08) rotate(0deg) !important;
+      box-shadow: 0 20px 40px rgba(233, 30, 99, 0.28);
+      z-index: 30;
+    }
+
+    @keyframes floatPolaroid {
+      0%, 100% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
+      50% { transform: translateY(-8px) rotate(var(--rot, 0deg)); }
+    }
+
+    .polaroid-img-wrapper {
+      width: 100%;
+      height: 220px;
+      background: #FFF5F8;
+      overflow: hidden;
+      border-radius: 2px;
+      position: relative;
+    }
+
+    .polaroid-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .polaroid-card:hover .polaroid-img {
+      transform: scale(1.06);
+    }
+
+    .polaroid-caption {
+      font-family: var(--font-title);
+      font-size: 1.35rem;
+      color: #5D3A42;
+      text-align: center;
+      margin-top: 14px;
+      line-height: 1.2;
+    }
+
+    .photo-lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 120;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .photo-lightbox.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .lightbox-content {
+      max-width: 90vw;
+      max-height: 85vh;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      border: 4px solid #fff;
+      object-fit: contain;
+      transform: scale(0.82);
+      opacity: 0;
+      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.3, 1), opacity 0.3s ease;
+    }
+
+    .photo-lightbox.active .lightbox-content {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      color: #fff;
+      font-size: 2.2rem;
+      cursor: pointer;
+      background: rgba(0,0,0,0.5);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      outline: none;
+    }
+
+    .ending-section {
+      text-align: center;
+      margin: 60px 0 30px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .ending-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .ending-love-text {
+      font-family: var(--font-header);
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      background: linear-gradient(45deg, #E91E63, #BA68C8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 2px 10px rgba(233, 30, 99, 0.2));
+    }
+
+    .reopen-letter-btn {
+      background: #ffffff;
+      border: 2px solid #FFB3C6;
+      color: #D81B60;
+      padding: 10px 24px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 14px;
+      box-shadow: 0 4px 15px rgba(233, 30, 99, 0.15);
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .reopen-letter-btn:hover {
+      background: #FFE4EC;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <button id="music-toggle" class="music-btn" title="Bật / Tắt Nhạc" aria-label="Bật / Tắt Nhạc">
+    <svg viewBox="0 0 24 24">
+      <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+    </svg>
+  </button>
+
+  <div id="spotify-wrapper" class="spotify-embed-container"></div>
+  <audio id="bg-audio" preload="auto" loop></audio>
+  <canvas id="flower-canvas"></canvas>
+
+  <div id="stage-intro" class="stage-intro">
+    <div class="intro-title-wrapper">
+      <h1 class="intro-title">Chúc Mừng 20/10</h1>
+      <p class="intro-subtitle">Gửi công chúa nhỏ của anh 🌸</p>
+    </div>
+  </div>
+
+  <main class="main-wrapper">
+    <div id="card-scene" class="card-scene">
+      <div id="main-envelope" class="card-envelope" role="button" tabindex="0" aria-label="Mở thiệp mừng 20/10">
+        <span class="card-stamp">20/10</span>
+        <div class="card-badge">✨ Món Quà Yêu Thương ✨</div>
+
+        <div class="card-photo-frame" id="card-frame"></div>
+
+        <h2 class="card-title">Chúc mừng em ngày 20/10</h2>
+        <p style="font-size: 0.95rem; color: #880e4f; opacity: 0.9; margin-top: 4px;">
+          Gửi gắm tất cả yêu thương và sự chân thành đến em ❤️
+        </p>
+      </div>
+
+      <div style="text-align: center;">
+        <div id="tap-hint" class="tap-hint">
+          <span>Em chạm vào thiệp nhé</span>
+          <span>💌</span>
+        </div>
+      </div>
+    </div>
+
+    <section id="memories-section" class="memories-section">
+      <h2 class="memories-title">Khoảnh Khắc Của Chúng Mình 📸</h2>
+      <p class="memories-subtitle">Mỗi nụ cười của em là niềm hạnh phúc lớn nhất của anh</p>
+      
+      <div id="gallery-grid" class="gallery-grid"></div>
+
+      <div id="ending-section" class="ending-section">
+        <div class="ending-love-text">Anh yêu bé cưng nhiều 🍀😚❤️🤗</div>
+        <p style="color: #6a1b9a; font-size: 1.1rem; font-weight: 500;">
+          Chúc em luôn rạng rỡ, bình an và mãi là người con gái anh thương nhất!
+        </p>
+        <button id="reopen-letter-btn" class="reopen-letter-btn">
+          <span>Đọc lại bức thư</span>
+          <span>💌</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <div id="letter-modal" class="letter-modal" role="dialog" aria-modal="true">
+    <div class="letter-paper">
+      <div class="letter-header">
+        <span class="letter-salutation" id="letter-recipient-title">Gửi em yêu của anh,</span>
+        <button id="btn-skip-typing" class="btn-skip" title="Hiển thị nhanh toàn bộ thư">
+          <span>Bỏ qua</span>
+          <span>⏩</span>
+        </button>
+      </div>
+
+      <div class="letter-content-scroll" id="letter-scroll-area">
+        <span id="typed-content"></span><span id="typing-cursor" class="typing-cursor"></span>
+      </div>
+
+      <div class="letter-footer">
+        <div class="letter-signature" id="letter-signature">Người thương của em 💗</div>
+        <button id="btn-view-photos" class="btn-view-photos" style="display: none;">
+          <span>Xem kỷ niệm của chúng mình 📸</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="photo-lightbox" class="photo-lightbox">
+    <button id="lightbox-close" class="lightbox-close">&times;</button>
+    <img id="lightbox-img" class="lightbox-content" alt="Kỷ niệm của chúng mình">
+  </div>
+
+  <script>
+    /* ==========================================================================
+       CẤU HÌNH (Đã tích hợp Lời chúc riêng, Ảnh kỷ niệm & nhạc "Bảo Bối")
+       ========================================================================== */
+    const CONFIG = {
+      RECIPIENT: "Em",
+      MAIN_CARD_PHOTO: "images/1000017913.jpg",
+      
+      PHOTOS: [
+        "images/1000018730.jpg",
+        "images/1000017913.jpg",
+        "images/1000017914.jpg",
+        "images/1000018234.jpg",
+        "images/1000018235.jpg",
+        "images/1000029237.jpg",
+        "images/1000029236.jpg",
+        "images/1000029235.jpg",
+        "images/1000029234.jpg",
+        "images/1000029233.jpg",
+        "images/1000029230.webp",
+        "images/1000029231.jpg",
+        "images/1000029232.jpg"
+      ],
+
+      MUSIC_FILE: "music/bao-boi-duong-edward.mp3",
+      SPOTIFY_EMBED_URL: "",
+      TYPING_SPEED: 45,
+      
+      LETTER_TEXT: `Anh mong em có ngày 20/10 vui vẻ, mong em luôn hạnh phúc, vui tươi ❤️
+
+Anh biết bây giờ anh đang có lỗi với em, không chỉ năm nay mà năm ngoái cũng dịp này anh làm em buồn. Làm em buồn, nhất là những ngày thế này anh day dứt khó chịu lắm, anh biết có hối lỗi ngàn lần mà em buồn rồi em khóc rồi em đau lòng rồi thì cũng không có ý nghĩa gì hết. Anh muốn nói là anh yêu em thương em rất nhiều, bởi vì yêu thương em nên anh mới có những cảm xúc khiến anh hành xử như thế, anh hiểu là bản thân còn bốc đồng, còn nhiều cái cần sửa. 
+
+Anh cảm ơn em nhiều vì đã luôn tha thứ, có lòng vị tha lớn lao đối với ny, anh xin lỗi em nhiều vì đã nhiều lần làm tổn thương em sâu sắc. Song anh vẫn luôn mong luôn có em là người con gái duy nhất bên anh trong đời, là người mà anh thương nhất ! 
+
+Anh chúc em luôn mạnh khỏe, bình an, đạt được mọi may mắn, mục tiêu mà em mơ ước, mong một nửa của anh sẽ luôn thương yêu anh. Anh yêu bé cưng nhiều 🍀😚❤️🤗`
+    };
+
+    const SVG_CARD_PLACEHOLDER = `
+      <div class="photo-placeholder">
+        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <span style="font-weight: 600; font-size: 1.05rem;">Em & Anh Yêu Thương</span>
+        <span style="font-size: 0.8rem; opacity: 0.85; margin-top: 4px;">(Kỷ niệm của chúng mình)</span>
+      </div>
+    `;
+
+    function getPolaroidFallback(index) {
+      const titles = [
+        "Em yêu 🌸",
+        "Nụ cười của em ✨",
+        "Hạnh phúc đôi ta 🏡",
+        "Ấm áp bên em 💖",
+        "Bình yên 🌷",
+        "Bé cưng của anh 💗",
+        "Hẹn hò ăn uống 🍜",
+        "Kỷ niệm ngọt ngào 🥰"
+      ];
+      const title = titles[index % titles.length];
+      return `
+        <div class="photo-placeholder" style="height: 100%;">
+          <svg style="width: 44px; height: 44px;" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          <span style="font-weight: 600; font-size: 0.95rem;">${title}</span>
+        </div>
+      `;
+    }
+
+    class FlowerSystem {
+      constructor(canvas) {
+        this.canvas = canvas;
+        this.ctx = canvas.getContext('2d');
+        this.petals = [];
+        this.confetti = [];
+        this.mode = 'burst';
+        this.width = canvas.width = window.innerWidth;
+        this.height = canvas.height = window.innerHeight;
+        this.types = ['sakura', 'rose', 'daisy', 'heart'];
+
+        window.addEventListener('resize', () => {
+          this.width = this.canvas.width = window.innerWidth;
+          this.height = this.canvas.height = window.innerHeight;
+        });
+      }
+
+      initBurst(count = 130) {
+        this.petals = [];
+        for (let i = 0; i < count; i++) {
+          this.petals.push(this.createPetal(true));
+        }
+      }
+
+      createPetal(isBurst = false) {
+        const type = this.types[Math.floor(Math.random() * this.types.length)];
+        return {
+          type: type,
+          x: Math.random() * this.width,
+          y: isBurst ? Math.random() * this.height : -30,
+          vx: (Math.random() - 0.5) * 2.2,
+          vy: Math.random() * 2.2 + 1.2,
+          size: Math.random() * 14 + 10,
+          rotation: Math.random() * Math.PI * 2,
+          rotSpeed: (Math.random() - 0.5) * 0.04,
+          opacity: Math.random() * 0.4 + 0.6,
+          swing: Math.random() * Math.PI * 2,
+          swingSpeed: Math.random() * 0.03 + 0.01,
+          color: type === 'sakura' ? '#FFB7C5' : (type === 'rose' ? '#F06292' : (type === 'daisy' ? '#FFF' : '#FF80AB'))
+        };
+      }
+
+      createConfetti(x, y) {
+        const colors = ['#FF4081', '#FF80AB', '#FFD54F', '#4DD0E1', '#BA68C8', '#FFF'];
+        for (let i = 0; i < 60; i++) {
+          const angle = Math.random() * Math.PI * 2;
+          const speed = Math.random() * 8 + 3;
+          this.confetti.push({
+            x: x,
+            y: y,
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed - 3,
+            size: Math.random() * 8 + 5,
+            color: colors[Math.floor(Math.random() * colors.length)],
+            rotation: Math.random() * Math.PI * 2,
+            rotSpeed: (Math.random() - 0.5) * 0.2,
+            opacity: 1,
+            gravity: 0.18
+          });
+        }
+      }
+
+      update() {
+        this.ctx.clearRect(0, 0, this.width, this.height);
+        const maxPetals = this.mode === 'burst' ? 140 : 25;
+        if (this.petals.length < maxPetals && Math.random() < 0.25) {
+          this.petals.push(this.createPetal(false));
+        }
+
+        for (let i = this.petals.length - 1; i >= 0; i--) {
+          const p = this.petals[i];
+          p.swing += p.swingSpeed;
+          p.x += p.vx + Math.sin(p.swing) * 1.2;
+          p.y += p.vy;
+          p.rotation += p.rotSpeed;
+
+          if (p.y > this.height + 40 || p.x < -40 || p.x > this.width + 40) {
+            if (this.mode === 'burst') {
+              p.y = -20;
+              p.x = Math.random() * this.width;
+            } else {
+              this.petals.splice(i, 1);
+              continue;
+            }
+          }
+          this.drawPetal(p);
+        }
+
+        for (let i = this.confetti.length - 1; i >= 0; i--) {
+          const c = this.confetti[i];
+          c.x += c.vx;
+          c.y += c.vy;
+          c.vy += c.gravity;
+          c.vx *= 0.98;
+          c.rotation += c.rotSpeed;
+          c.opacity -= 0.012;
+
+          if (c.opacity <= 0) {
+            this.confetti.splice(i, 1);
+            continue;
+          }
+
+          this.ctx.save();
+          this.ctx.translate(c.x, c.y);
+          this.ctx.rotate(c.rotation);
+          this.ctx.globalAlpha = c.opacity;
+          this.ctx.fillStyle = c.color;
+          this.ctx.fillRect(-c.size / 2, -c.size / 2, c.size, c.size * 0.7);
+          this.ctx.restore();
+        }
+
+        requestAnimationFrame(() => this.update());
+      }
+
+      drawPetal(p) {
+        this.ctx.save();
+        this.ctx.translate(p.x, p.y);
+        this.ctx.rotate(p.rotation);
+        this.ctx.globalAlpha = p.opacity;
+
+        if (p.type === 'heart') {
+          this.ctx.fillStyle = p.color;
+          this.ctx.beginPath();
+          const s = p.size * 0.6;
+          this.ctx.moveTo(0, s * 0.3);
+          this.ctx.bezierCurveTo(-s, -s * 0.5, -s * 1.2, s * 0.4, 0, s * 1.2);
+          this.ctx.bezierCurveTo(s * 1.2, s * 0.4, s, -s * 0.5, 0, s * 0.3);
+          this.ctx.fill();
+        } else if (p.type === 'daisy') {
+          this.ctx.fillStyle = '#FFFFFF';
+          for (let a = 0; a < 6; a++) {
+            this.ctx.rotate(Math.PI / 3);
+            this.ctx.beginPath();
+            this.ctx.ellipse(0, p.size * 0.4, p.size * 0.22, p.size * 0.45, 0, 0, Math.PI * 2);
+            this.ctx.fill();
+          }
+          this.ctx.fillStyle = '#FFD54F';
+          this.ctx.beginPath();
+          this.ctx.arc(0, 0, p.size * 0.25, 0, Math.PI * 2);
+          this.ctx.fill();
+        } else {
+          const grad = this.ctx.createRadialGradient(0, 0, 1, 0, 0, p.size);
+          grad.addColorStop(0, '#FFFFFF');
+          grad.addColorStop(0.4, p.color);
+          grad.addColorStop(1, p.type === 'rose' ? '#D81B60' : '#F48FB1');
+          this.ctx.fillStyle = grad;
+          this.ctx.beginPath();
+          this.ctx.moveTo(0, -p.size);
+          this.ctx.bezierCurveTo(p.size * 0.8, -p.size * 0.8, p.size * 0.9, p.size * 0.5, 0, p.size);
+          this.ctx.bezierCurveTo(-p.size * 0.9, p.size * 0.5, -p.size * 0.8, -p.size * 0.8, 0, -p.size);
+          this.ctx.fill();
+        }
+        this.ctx.restore();
+      }
+    }
+
+    class AudioManager {
+      constructor() {
+        this.audio = document.getElementById('bg-audio');
+        this.toggleBtn = document.getElementById('music-toggle');
+        this.spotifyWrapper = document.getElementById('spotify-wrapper');
+        this.isPlaying = false;
+        this.hasUserInteracted = false;
+        this.init();
+      }
+
+      init() {
+        if (CONFIG.MUSIC_FILE && CONFIG.MUSIC_FILE.trim() !== '') {
+          this.audio.src = CONFIG.MUSIC_FILE;
+          this.audio.volume = 0;
+          this.toggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.togglePlay();
+          });
+        } else {
+          this.toggleBtn.style.display = 'none';
+        }
+      }
+
+      playWithFadeIn() {
+        if (!CONFIG.MUSIC_FILE || this.isPlaying) return;
+        this.hasUserInteracted = true;
+        
+        const playPromise = this.audio.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            this.isPlaying = true;
+            this.toggleBtn.classList.add('playing');
+            this.fadeIn(1800, 0.65);
+          }).catch(err => {
+            console.log("Chờ tương tác phát nhạc:", err);
+          });
+        }
+      }
+
+      fadeIn(duration = 2000, targetVolume = 0.65) {
+        const stepTime = 50;
+        const steps = duration / stepTime;
+        const volumeIncrement = targetVolume / steps;
+        
+        let currentStep = 0;
+        const fadeInterval = setInterval(() => {
+          currentStep++;
+          if (this.audio.volume + volumeIncrement >= targetVolume) {
+            this.audio.volume = targetVolume;
+            clearInterval(fadeInterval);
+          } else {
+            this.audio.volume = Math.min(1, this.audio.volume + volumeIncrement);
+          }
+        }, stepTime);
+      }
+
+      togglePlay() {
+        if (!this.audio.src) return;
+        if (this.audio.paused) {
+          this.audio.play();
+          this.audio.volume = 0.65;
+          this.isPlaying = true;
+          this.toggleBtn.classList.add('playing');
+        } else {
+          this.audio.pause();
+          this.isPlaying = false;
+          this.toggleBtn.classList.remove('playing');
+        }
+      }
+    }
+
+    class CelebrationApp {
+      constructor() {
+        this.canvas = document.getElementById('flower-canvas');
+        this.flowerSystem = new FlowerSystem(this.canvas);
+        this.audioManager = new AudioManager();
+        
+        this.stageIntro = document.getElementById('stage-intro');
+        this.cardScene = document.getElementById('card-scene');
+        this.mainEnvelope = document.getElementById('main-envelope');
+        this.cardFrame = document.getElementById('card-frame');
+        this.tapHint = document.getElementById('tap-hint');
+        
+        this.letterModal = document.getElementById('letter-modal');
+        this.typedContent = document.getElementById('typed-content');
+        this.typingCursor = document.getElementById('typing-cursor');
+        this.letterScrollArea = document.getElementById('letter-scroll-area');
+        this.btnSkip = document.getElementById('btn-skip-typing');
+        this.btnViewPhotos = document.getElementById('btn-view-photos');
+        this.recipientTitle = document.getElementById('letter-recipient-title');
+        
+        this.memoriesSection = document.getElementById('memories-section');
+        this.galleryGrid = document.getElementById('gallery-grid');
+        this.endingSection = document.getElementById('ending-section');
+        this.reopenBtn = document.getElementById('reopen-letter-btn');
+
+        this.isTypingFinished = false;
+        this.typingTimeout = null;
+
+        this.init();
+      }
+
+      init() {
+        if (CONFIG.RECIPIENT) {
+          this.recipientTitle.textContent = `Gửi ${CONFIG.RECIPIENT.toLowerCase()} yêu của anh,`;
+        }
+
+        this.loadMainCardPhoto();
+        this.renderGalleryPhotos();
+
+        this.mainEnvelope.addEventListener('click', () => this.openLetter());
+        this.tapHint.addEventListener('click', () => this.openLetter());
+        this.btnSkip.addEventListener('click', () => this.skipTyping());
+        this.btnViewPhotos.addEventListener('click', () => this.showPhotos());
+        this.reopenBtn.addEventListener('click', () => this.reopenLetter());
+
+        this.startFlowers();
+      }
+
+      startFlowers() {
+        this.flowerSystem.initBurst(120);
+        this.flowerSystem.update();
+
+        setTimeout(() => {
+          this.stageIntro.style.opacity = '0';
+          setTimeout(() => {
+            this.stageIntro.style.display = 'none';
+          }, 1500);
+
+          this.flowerSystem.mode = 'ambient';
+          this.showCard();
+        }, 4200);
+      }
+
+      showCard() {
+        this.cardScene.classList.add('visible');
+      }
+
+      loadMainCardPhoto() {
+        if (!CONFIG.MAIN_CARD_PHOTO) {
+          this.cardFrame.innerHTML = SVG_CARD_PLACEHOLDER;
+          return;
+        }
+
+        const img = new Image();
+        img.className = 'card-photo-img';
+        img.alt = 'Kỷ niệm của chúng mình';
+        img.src = CONFIG.MAIN_CARD_PHOTO;
+
+        img.onload = () => {
+          this.cardFrame.innerHTML = '';
+          this.cardFrame.appendChild(img);
+        };
+        img.onerror = () => {
+          this.cardFrame.innerHTML = SVG_CARD_PLACEHOLDER;
+        };
+      }
+
+      openLetter() {
+        this.audioManager.playWithFadeIn();
+        this.tapHint.style.opacity = '0';
+        this.letterModal.classList.add('open');
+        setTimeout(() => {
+          this.typeLetter();
+        }, 500);
+      }
+
+      typeLetter() {
+        const text = CONFIG.LETTER_TEXT;
+        let index = 0;
+        this.typedContent.textContent = '';
+        this.typingCursor.style.display = 'inline-block';
+        this.isTypingFinished = false;
+
+        const typeNextChar = () => {
+          if (this.isTypingFinished) return;
+
+          if (index < text.length) {
+            const char = text.charAt(index);
+            this.typedContent.textContent += char;
+            index++;
+
+            this.letterScrollArea.scrollTop = this.letterScrollArea.scrollHeight;
+
+            let delay = CONFIG.TYPING_SPEED || 45;
+            if (char === '.' || char === '!' || char === '?') {
+              delay = 380;
+            } else if (char === ',' || char === ';') {
+              delay = 180;
+            } else if (char === '\n') {
+              delay = 260;
+            }
+
+            this.typingTimeout = setTimeout(typeNextChar, delay);
+          } else {
+            this.onTypingComplete();
+          }
+        };
+
+        typeNextChar();
+      }
+
+      skipTyping() {
+        if (this.isTypingFinished) return;
+        clearTimeout(this.typingTimeout);
+        this.typedContent.textContent = CONFIG.LETTER_TEXT;
+        this.letterScrollArea.scrollTop = this.letterScrollArea.scrollHeight;
+        this.onTypingComplete();
+      }
+
+      onTypingComplete() {
+        this.isTypingFinished = true;
+        this.typingCursor.style.display = 'none';
+        this.btnSkip.style.display = 'none';
+        this.btnViewPhotos.style.display = 'inline-flex';
+
+        setTimeout(() => {
+          if (!this.memoriesSection.classList.contains('active')) {
+            this.btnViewPhotos.focus();
+          }
+        }, 1800);
+      }
+
+      showPhotos() {
+        this.letterModal.classList.remove('open');
+        this.memoriesSection.classList.add('active');
+
+        setTimeout(() => {
+          this.memoriesSection.scrollIntoView({ behavior: 'smooth' });
+        }, 200);
+
+        setTimeout(() => {
+          this.endingSection.classList.add('visible');
+          this.flowerSystem.createConfetti(window.innerWidth / 2, window.innerHeight * 0.7);
+          setTimeout(() => {
+            this.flowerSystem.createConfetti(window.innerWidth * 0.3, window.innerHeight * 0.6);
+            this.flowerSystem.createConfetti(window.innerWidth * 0.7, window.innerHeight * 0.6);
+          }, 600);
+        }, 800);
+      }
+
+      renderGalleryPhotos() {
+        this.galleryGrid.innerHTML = '';
+        const photos = (CONFIG.PHOTOS && CONFIG.PHOTOS.length > 0) ? CONFIG.PHOTOS : ["", "", "", ""];
+
+        photos.forEach((photoSrc, idx) => {
+          const card = document.createElement('div');
+          card.className = 'polaroid-card';
+
+          const randomRot = ((Math.random() * 14) - 7).toFixed(1);
+          card.style.setProperty('--rot', `${randomRot}deg`);
+          card.style.animationDelay = `${(idx * 0.35).toFixed(2)}s`;
+
+          const imgWrapper = document.createElement('div');
+          imgWrapper.className = 'polaroid-img-wrapper';
+
+          const img = new Image();
+          img.className = 'polaroid-img';
+          img.alt = `Kỷ niệm số ${idx + 1}`;
+          img.loading = 'lazy';
+
+          img.onerror = () => {
+            imgWrapper.innerHTML = getPolaroidFallback(idx);
+          };
+          imgWrapper.appendChild(img);
+
+          const caption = document.createElement('div');
+          caption.className = 'polaroid-caption';
+          const defaultCaptions = [
+            "Em yêu 🌸",
+            "Nụ cười của em ✨",
+            "Hạnh phúc đôi ta 🏡",
+            "Ấm áp bên em 💖",
+            "Bình yên 🌷",
+            "Bé cưng của anh 💗",
+            "Hẹn hò ăn uống 🍜",
+            "Kỷ niệm ngọt ngào 🥰"
+          ];
+          caption.textContent = defaultCaptions[idx % defaultCaptions.length];
+
+          card.appendChild(imgWrapper);
+          card.appendChild(caption);
+
+          card.addEventListener('click', () => {
+            this.openLightbox(photoSrc);
+          });
+
+          this.galleryGrid.appendChild(card);
+          if (photoSrc) {
+            img.src = photoSrc;
+          } else {
+            imgWrapper.innerHTML = getPolaroidFallback(idx);
+          }
+        });
+
+        this.initLightbox();
+      }
+
+      initLightbox() {
+        const lightbox = document.getElementById('photo-lightbox');
+        const closeBtn = document.getElementById('lightbox-close');
+
+        closeBtn.addEventListener('click', () => {
+          lightbox.classList.remove('active');
+        });
+
+        lightbox.addEventListener('click', (e) => {
+          if (e.target === lightbox) {
+            lightbox.classList.remove('active');
+          }
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            lightbox.classList.remove('active');
+          }
+        });
+      }
+
+      openLightbox(src) {
+        if (!src) return;
+        const lightbox = document.getElementById('photo-lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        lightboxImg.src = src;
+        lightbox.classList.add('active');
+      }
+
+      reopenLetter() {
+        this.letterModal.classList.add('open');
+        this.btnSkip.style.display = 'none';
+        this.btnViewPhotos.style.display = 'inline-flex';
+        this.typedContent.textContent = CONFIG.LETTER_TEXT;
+        this.typingCursor.style.display = 'none';
+        this.letterScrollArea.scrollTop = 0;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      window.app = new CelebrationApp();
+    });
+  </script>
+</body>
+</html>
